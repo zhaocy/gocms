@@ -1,0 +1,29 @@
+<div class="layui-row layui-col-space5">
+    <div class="layui-col-xs12 layui-col-sm8 layui-col-lg9">
+        <fieldset class="layui-elem-field layui-field-title">
+            <legend>诗词古韵</legend>
+        </fieldset>
+        <div class="layui-row layui-col-space15">
+            {{range $idx,$elem:= .data.list}}
+            <div class="layui-col-xs12 layui-col-sm6 layui-col-lg4">
+                <div class="item">
+                    <a href="/show/{{$elem.id}}" class="img_span">
+                        <span class="img_span"></span>
+                    </a>
+                    <div class="list_p">
+                        <div class="text">
+                            {{if $elem.media}}
+                                <i class="layui-icon" style="font-size: 20px; color: #1E9FFF;">&#xe645;</i>
+                            {{else}}
+                                <i class="layui-icon" style="font-size: 20px; color: #1E9FFF;">&#xe705;</i>
+                            {{end}}
+                            {{$elem.title}}
+                        </div>
+                        <div class="desc">{{$elem.desc}}</div>
+                    </div>
+                </div>
+            </div>
+            {{end}}
+        </div>
+    </div>
+</div>
